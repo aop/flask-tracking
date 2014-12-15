@@ -41,6 +41,7 @@ class Tracking(Document):
             ('status_code', '-date_created')
         ],
         'ordering': ['-date_created'],
+	'db_alias': 'tracking_db'
     }
 
     def user_repr(self):

@@ -10,7 +10,7 @@ from flask import request
 from flask.ext.tracking import documents
 from flask.ext.tracking.utils import WSGICopyBody
 
-from mongoengine import Document
+from mongoengine import Document, register_connection
 
 try:
     from flask.ext.login import current_user
@@ -22,6 +22,8 @@ class Tracking(object):
         app.before_request(self.track_before)
         app.after_request(self.track_after)
         app.wsgi_app = WSGICopyBody(app.wsgi_app)
+
+	register_connection('tracking_db','tracking_db')
 
         self.hostname = socket.gethostname()
 

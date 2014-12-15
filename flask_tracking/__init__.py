@@ -23,7 +23,7 @@ class Tracking(object):
         app.after_request(self.track_after)
         app.wsgi_app = WSGICopyBody(app.wsgi_app)
 
-	register_connection('tracking_db','tracking_db')
+	register_connection('tracking_db',app.config.get('TRACKING_DB_NAME','tracking_db'))
 
         self.hostname = socket.gethostname()
 

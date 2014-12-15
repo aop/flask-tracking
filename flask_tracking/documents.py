@@ -20,11 +20,11 @@ class Tracking(Document):
 
     method = StringField()
     request_headers = ListField()
-    request_body = BinaryField()
+    request_body = StringField()
 
     status_code = IntField()
     response_headers = ListField()
-    response_body = BinaryField()
+    response_body = StringField()
 
     # Execution time in ms
     execution_time = IntField()

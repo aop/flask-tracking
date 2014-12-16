@@ -103,7 +103,7 @@ class Tracking(object):
             )
             try:
                 t.save(cascade=False, write_concern={'w': -1, 'fsync': False})
-            except (mongoengine.connection.ConnectionError, pymongo.errors.AutoReconnect, InvalidStringData):  # InvalidStringData is raised when a BSON object can't be encoded
+            except (pymongo.errors.AutoReconnect, InvalidStringData):  # InvalidStringData is raised when a BSON object can't be encoded
                 pass
 
         return response

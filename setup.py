@@ -3,7 +3,7 @@ from distutils.core import setup
 files = ["flask_tracking/*"]
 
 setup(name = "flask_tracking",
-    version = "1",
+    version = "1.0.1",
     description = "Logs Flask requests and responses to MongoDB",
     author = "Oskari Petas",
     author_email = "oskari.petas@gmail.com",
